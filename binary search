@@ -1,0 +1,25 @@
+def ceilingInSortedArray(n, x, arr):
+    arr.sort()
+    ans=-1
+    l=0
+    h=n-1
+    while l<=h:
+        mid=l+(h-l)//2
+        if arr[mid]>=x:
+            ans=arr[mid]
+            h=mid-1
+        else:
+            l=mid+1
+    a1=ans
+    ans=-1
+    l=0
+    h=n-1
+    while l<=h:
+        mid=l+(h-l)//2
+        if arr[mid]<=x:
+            ans=arr[mid]
+            l=mid+1
+        else:
+            h=mid-1
+    print(ans,end=" ")
+    return a1
